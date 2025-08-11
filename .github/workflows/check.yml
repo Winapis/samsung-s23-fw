@@ -1,27 +1,25 @@
 name: Check firmware update
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
   push:
   workflow_dispatch:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: linux
 
     strategy:
       fail-fast: false
       matrix:
         include:
           - model: "SM-S911B"
-            region: "EUX"
+            region: "THL"
           - model: "SM-S9160"
-            region: "TGY"
+            region: "THL"
           - model: "SM-S916B"
-            region: "EUX"
+            region: "THL"
           - model: "SM-S918B"
-            region: "EUX"
+            region: "THL"
 
     steps:
     - name: Checkout repo
