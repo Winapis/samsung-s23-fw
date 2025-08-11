@@ -6,7 +6,7 @@ on:
 
 jobs:
   update:
-    runs-on: azuregh
+    runs-on: linux
     permissions:
       contents: write
       pull-requests: write
@@ -15,13 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - model: "SM-S911B"
-            region: "THL"
-          - model: "SM-S9160"
-            region: "THL"
           - model: "SM-S916B"
-            region: "THL"
-          - model: "SM-S918B"
             region: "THL"
 
     steps:
